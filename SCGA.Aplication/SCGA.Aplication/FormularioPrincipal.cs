@@ -19,7 +19,51 @@ namespace SCGA.Aplication
 
         private void FormularioPrincipal_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\n')
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox txb = e.Control as TextBox;
+            txb.PreviewKeyDown += (S, E) =>
+            {
+                if (E.KeyCode == Keys.Enter)
+                {
+                    dataGridView1.CurrentCell = dataGridView1.CurrentRow.Cells[dataGridView1.CurrentCell.ColumnIndex + 1];                                        
+                }
+            };
         }
     }
 }
