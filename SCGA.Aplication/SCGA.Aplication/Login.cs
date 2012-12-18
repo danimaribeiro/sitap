@@ -22,6 +22,11 @@ namespace SCGA.Aplication
         private void botaoEntrar_Click(object sender, EventArgs e)
         {
 
+            System.Globalization.CultureInfo conversor = new System.Globalization.CultureInfo("en-US",false);
+
+            var valor  = decimal.Parse(txtUsuario.Text, conversor);
+            MessageBox.Show(valor.ToString());
+
             System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
             client.BaseAddress = new Uri("http://localhost:27543/");
 
