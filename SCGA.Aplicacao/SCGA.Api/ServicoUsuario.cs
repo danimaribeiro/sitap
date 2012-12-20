@@ -7,16 +7,16 @@ namespace SCGA.Api
 {
     public class ServicoUsuario
     {
-        private Contexto.Entity_Contexto _contexto;
+        private Contexto.SCGAContext _contexto;
 
-        public ServicoUsuario(Contexto.Entity_Contexto contexto)
+        public ServicoUsuario(Contexto.SCGAContext contexto)
         {
             _contexto = contexto;
         }
 
         public Dominio.Usuario BuscarUsuario(string usuario, string senha)
         {
-            return _contexto.Usuarios.Where(x => x.Username == usuario && x.Senha == senha).SingleOrDefault();
+            return _contexto.Usuarios.Where(x => x.UserName == usuario && x.Senha == senha).SingleOrDefault();
         }
 
     }

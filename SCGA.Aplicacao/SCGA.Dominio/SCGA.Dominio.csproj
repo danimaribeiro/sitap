@@ -45,10 +45,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="Animal_Vacina.cs" />
+    <Compile Include="Contato.cs" />
+    <Compile Include="Doenca.cs" />
     <Compile Include="EntidadePadrao.cs" />
-    <Compile Include="EntityMapping\UsuarioMapping.cs" />
+    <Compile Include="EntityMapping\AnimalMap.cs" />
+    <Compile Include="EntityMapping\Animal_VacinaMap.cs" />
+    <Compile Include="EntityMapping\ContatoMap.cs" />
+    <Compile Include="EntityMapping\DoencaMap.cs" />
+    <Compile Include="EntityMapping\ExameMap.cs" />
+    <Compile Include="EntityMapping\ExecucaoLimpezaMap.cs" />
+    <Compile Include="EntityMapping\FaseCriacaoMap.cs" />
+    <Compile Include="EntityMapping\FuncionarioMap.cs" />
+    <Compile Include="EntityMapping\GrupoMap.cs" />
+    <Compile Include="EntityMapping\LimpezaMap.cs" />
+    <Compile Include="EntityMapping\LocalizacaoMap.cs" />
+    <Compile Include="EntityMapping\LoteMap.cs" />
+    <Compile Include="EntityMapping\PerfilUsuarioMap.cs" />
+    <Compile Include="EntityMapping\ProdutoMap.cs" />
+    <Compile Include="EntityMapping\Produto_RacaoMap.cs" />
+    <Compile Include="EntityMapping\RacaoMap.cs" />
+    <Compile Include="EntityMapping\TipoContatoMap.cs" />
+    <Compile Include="EntityMapping\UnidadeMedidaMap.cs" />
+    <Compile Include="EntityMapping\UsuarioMap.cs" />
+    <Compile Include="EntityMapping\VacinaMap.cs" />
+    <Compile Include="EntityMapping\VeterinarioMap.cs" />
+    <Compile Include="Exame.cs" />
+    <Compile Include="ExecucaoLimpeza.cs" />
+    <Compile Include="FaseCriacao.cs" />
+    <Compile Include="Funcionario.cs" />
+    <Compile Include="Grupo.cs" />
+    <Compile Include="Limpeza.cs" />
+    <Compile Include="Localizacao.cs" />
+    <Compile Include="Lote.cs" />
+    <Compile Include="PerfilUsuario.cs" />
+    <Compile Include="Produto.cs" />
+    <Compile Include="Produto_Racao.cs" />
+    <Compile Include="Racao.cs" />
+    <Compile Include="TipoContato.cs" />
+    <Compile Include="UnidadeMedida.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vacina.cs" />
+    <Compile Include="Veterinario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
