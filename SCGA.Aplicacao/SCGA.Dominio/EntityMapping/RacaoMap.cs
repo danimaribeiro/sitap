@@ -28,7 +28,7 @@ namespace SCGA.Dominio.Mapping
             // Relationships
             this.HasRequired(t => t.UnidadeMedida)
                 .WithMany(t => t.Racaos)
-                .HasForeignKey(d => d.UnidadeMedida_Id);
+                .HasForeignKey(d => d.UnidadeMedida_Id).WillCascadeOnDelete(false);
 
         }
     }

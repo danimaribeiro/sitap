@@ -15,7 +15,8 @@ namespace SCGA.Aplicacao
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioPrincipal());
+            if(new Login().ShowDialog() == DialogResult.OK)
+                Application.Run(new FormularioPrincipal());
         }
     }
 }

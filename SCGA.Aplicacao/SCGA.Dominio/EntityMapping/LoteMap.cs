@@ -31,13 +31,13 @@ namespace SCGA.Dominio.Mapping
             // Relationships
             this.HasRequired(t => t.FaseCriacao)
                 .WithMany(t => t.Lotes)
-                .HasForeignKey(d => d.FaseCriacao_Id);
+                .HasForeignKey(d => d.FaseCriacao_Id).WillCascadeOnDelete(false);
             this.HasRequired(t => t.Localizacao)
                 .WithMany(t => t.Lotes)
-                .HasForeignKey(d => d.Localizacao_Id);
+                .HasForeignKey(d => d.Localizacao_Id).WillCascadeOnDelete(false);
             this.HasRequired(t => t.UnidadeMedida)
                 .WithMany(t => t.Lotes)
-                .HasForeignKey(d => d.UnidadeMedida_Id);
+                .HasForeignKey(d => d.UnidadeMedida_Id).WillCascadeOnDelete(false);
 
         }
     }

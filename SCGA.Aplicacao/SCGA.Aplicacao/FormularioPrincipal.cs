@@ -15,5 +15,13 @@ namespace SCGA.Aplicacao
         {
             InitializeComponent();
         }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var janelaUsuario = new CadastroUsuario();            
+            janelaUsuario.MdiParent = this;
+            janelaUsuario.WindowState = FormWindowState.Maximized;
+            janelaUsuario.Show();
+        }
     }
 }

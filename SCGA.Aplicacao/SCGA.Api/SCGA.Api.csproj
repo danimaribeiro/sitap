@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\SCGAContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ServicoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
