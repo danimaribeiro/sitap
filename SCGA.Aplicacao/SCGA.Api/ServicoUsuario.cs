@@ -35,5 +35,12 @@ namespace SCGA.Api
             return _contexto.Usuarios.ToList();
         }
 
+        public List<Dominio.Menu> RetornarMenusPermitidos(Dominio.Usuario usuario)
+        {
+            var lista = from p in _contexto.MenusPerfilUsuario.Where(x => x.Perfil.Id == usuario.PerfilUsuario_Id)
+                        select p.MenuPermitido;
+
+            return lista.ToList();
+        }
     }
 }

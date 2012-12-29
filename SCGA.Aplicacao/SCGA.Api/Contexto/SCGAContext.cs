@@ -41,6 +41,8 @@ namespace SCGA.Api.Contexto
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Vacina> Vacinas { get; set; }
         public DbSet<Veterinario> Veterinarios { get; set; }
+        public DbSet<Menu> Menus{ get; set; }
+        public DbSet<PerfilUsuarioMenu> MenusPerfilUsuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -56,7 +58,9 @@ namespace SCGA.Api.Contexto
             modelBuilder.Configurations.Add(new LimpezaMap());
             modelBuilder.Configurations.Add(new LocalizacaoMap());
             modelBuilder.Configurations.Add(new LoteMap());
+            modelBuilder.Configurations.Add(new MenuMap());
             modelBuilder.Configurations.Add(new PerfilUsuarioMap());
+            modelBuilder.Configurations.Add(new PerfilUsuarioMenuMap());
             modelBuilder.Configurations.Add(new ProdutoMap());
             modelBuilder.Configurations.Add(new Produto_RacaoMap());
             modelBuilder.Configurations.Add(new RacaoMap());            

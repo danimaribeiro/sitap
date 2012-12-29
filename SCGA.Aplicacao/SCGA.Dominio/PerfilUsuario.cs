@@ -8,9 +8,11 @@ namespace SCGA.Dominio
         public PerfilUsuario()
         {
             this.Usuarios = new List<Usuario>();
+            this.MenusPerfil = new List<PerfilUsuarioMenu>();
         }
                 
         public string Descricao { get; set; }        
         public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<PerfilUsuarioMenu> MenusPerfil { get; set; }
     }
 }

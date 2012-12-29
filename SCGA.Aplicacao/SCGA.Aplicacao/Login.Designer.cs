@@ -30,12 +30,12 @@
         {
             this.GrpLogin = new System.Windows.Forms.GroupBox();
             this.LnkEsqueciMinhaSenha = new System.Windows.Forms.LinkLabel();
+            this.BtnCancelar = new System.Windows.Forms.Button();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnLogar = new System.Windows.Forms.Button();
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnCancelar = new System.Windows.Forms.Button();
-            this.BtnLogar = new System.Windows.Forms.Button();
             this.PcbImagem = new System.Windows.Forms.PictureBox();
             this.GrpLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcbImagem)).BeginInit();
@@ -67,41 +67,6 @@
             this.LnkEsqueciMinhaSenha.TabStop = true;
             this.LnkEsqueciMinhaSenha.Text = "Esqueci Minha Senha";
             // 
-            // TxtPassword
-            // 
-            this.TxtPassword.Location = new System.Drawing.Point(66, 50);
-            this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(207, 20);
-            this.TxtPassword.TabIndex = 1;
-            this.TxtPassword.UseSystemPasswordChar = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Senha :";
-            // 
-            // TxtUsername
-            // 
-            this.TxtUsername.Location = new System.Drawing.Point(66, 22);
-            this.TxtUsername.Name = "TxtUsername";
-            this.TxtUsername.Size = new System.Drawing.Size(207, 20);
-            this.TxtUsername.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Usuário :";
-            // 
             // BtnCancelar
             // 
             this.BtnCancelar.Image = global::SCGA.Aplicacao.Properties.Resources.Cancel;
@@ -114,6 +79,25 @@
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // TxtPassword
+            // 
+            this.TxtPassword.Location = new System.Drawing.Point(66, 50);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(207, 20);
+            this.TxtPassword.TabIndex = 1;
+            this.TxtPassword.UseSystemPasswordChar = true;
+            this.TxtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtUsername_KeyUp);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Senha :";
+            // 
             // BtnLogar
             // 
             this.BtnLogar.Image = global::SCGA.Aplicacao.Properties.Resources.apply;
@@ -125,6 +109,24 @@
             this.BtnLogar.Text = "OK";
             this.BtnLogar.UseVisualStyleBackColor = true;
             this.BtnLogar.Click += new System.EventHandler(this.BtnLogar_Click);
+            // 
+            // TxtUsername
+            // 
+            this.TxtUsername.Location = new System.Drawing.Point(66, 22);
+            this.TxtUsername.Name = "TxtUsername";
+            this.TxtUsername.Size = new System.Drawing.Size(207, 20);
+            this.TxtUsername.TabIndex = 0;
+            this.TxtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtUsername_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Usuário :";
             // 
             // PcbImagem
             // 

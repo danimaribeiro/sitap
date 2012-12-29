@@ -62,7 +62,9 @@
     <Compile Include="EntityMapping\LimpezaMap.cs" />
     <Compile Include="EntityMapping\LocalizacaoMap.cs" />
     <Compile Include="EntityMapping\LoteMap.cs" />
+    <Compile Include="EntityMapping\MenuMap.cs" />
     <Compile Include="EntityMapping\PerfilUsuarioMap.cs" />
+    <Compile Include="EntityMapping\PerfilUsuarioMenuMap.cs" />
     <Compile Include="EntityMapping\ProdutoMap.cs" />
     <Compile Include="EntityMapping\Produto_RacaoMap.cs" />
     <Compile Include="EntityMapping\RacaoMap.cs" />
@@ -79,7 +81,9 @@
     <Compile Include="Limpeza.cs" />
     <Compile Include="Localizacao.cs" />
     <Compile Include="Lote.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="PerfilUsuario.cs" />
+    <Compile Include="PerfilUsuarioMenu.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Produto_Racao.cs" />
     <Compile Include="Racao.cs" />

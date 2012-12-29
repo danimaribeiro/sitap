@@ -18,12 +18,30 @@ namespace SCGA.Aplicacao
 
         private void BtnLogar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            Api.ServicoUsuario servico = new Api.ServicoUsuario();
+            var usuario = servico.BuscarUsuario(TxtUsername.Text, TxtPassword.Text);
+            if (usuario != null)
+            {
+                Shared.Configuracao.SetarUsuarioAplicacao(usuario);
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            }
+            else
+                MessageBox.Show("Usuário ou senha inválidos", "Atenção!");
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        }
+
+        private void TxtUsername_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }
