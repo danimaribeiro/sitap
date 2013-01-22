@@ -13,6 +13,7 @@ namespace SCGA.Aplicacao
     public partial class CadastroUsuario : Form
     {
         private ServicoUsuario _servico;
+        private Dominio.Usuario _usuario;
 
         public CadastroUsuario()
         {
@@ -22,7 +23,7 @@ namespace SCGA.Aplicacao
 
         private void CadastroUsuario_Load(object sender, EventArgs e)
         {
-            var listaUsuarios = _servico.Listar();
+            var listaUsuarios = _servico.Listar(new Dominio.Common.Filtro("Nome") { });
             gridViewUsuarios.DataSource = listaUsuarios;
         }
 
@@ -33,7 +34,12 @@ namespace SCGA.Aplicacao
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            _usuario.Nome = txtNome.Text;
+            _usuario.Email = txtEmail.Text;
+            _usuario.Senha = txtSenha.Text;
+            _usuario.UserName = txtUsername.Text;
 
+            _servico.Salvar(_usuario);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

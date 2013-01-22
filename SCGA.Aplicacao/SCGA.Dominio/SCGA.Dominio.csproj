@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Animal.cs" />
     <Compile Include="Animal_Vacina.cs" />
+    <Compile Include="Common\Filtro.cs" />
+    <Compile Include="Common\ResultadoPaginado.cs" />
     <Compile Include="Contato.cs" />
     <Compile Include="Doenca.cs" />
     <Compile Include="EntidadePadrao.cs" />

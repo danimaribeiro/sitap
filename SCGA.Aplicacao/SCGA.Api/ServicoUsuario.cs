@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SCGA.Dominio.Common;
 
 namespace SCGA.Api
 {
@@ -23,16 +24,27 @@ namespace SCGA.Api
         {
             //TODO efetuar validação
             if (usuario.Id == 0)
+            {
+                usuario.DataCriacao = DateTime.Now;
+                usuario.UltimaAtualizacao = DateTime.Now;
+                usuario.Codigo = _contexto.Usuarios.Max(x => x.Codigo) + 1;
                 _contexto.Usuarios.Add(usuario);
+            }
             else
+            {
+                usuario.UltimaAtualizacao = DateTime.Now;
                 _contexto.Entry(usuario).State = System.Data.EntityState.Modified;
+            }
+                        
             _contexto.SaveChanges();
             return usuario;
         }
 
-        public List<Dominio.Usuario> Listar()
+        public ResultadoPaginado<List<Dominio.Usuario>> Listar(Filtro filtros)
         {
-            return _contexto.Usuarios.ToList();
+            var consulta = _contexto.Usuarios.Skip(filtros.Pagina * filtros.QuantidadePagina).Take(filtros.QuantidadePagina);
+            //TODO Achar uma maneira de passar a string de filtros diretamente para a consulta;
+            return new ResultadoPaginado<List<Dominio.Usuario>>(consulta.ToList(), consulta.Count(), filtros);            
         }
 
         public List<Dominio.Menu> RetornarMenusPermitidos(Dominio.Usuario usuario)
