@@ -46,6 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\SCGAContext.cs" />
+    <Compile Include="Migrations\201301232158247_Initial_Create.cs" />
+    <Compile Include="Migrations\201301232158247_Initial_Create.Designer.cs">
+      <DependentUpon>201301232158247_Initial_Create.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ServicoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201301232158247_Initial_Create.resx">
+      <DependentUpon>201301232158247_Initial_Create.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
