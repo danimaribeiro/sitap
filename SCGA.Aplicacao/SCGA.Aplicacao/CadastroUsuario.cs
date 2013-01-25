@@ -7,18 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SCGA.Api;
+using SCGA.Dominio;
 
 namespace SCGA.Aplicacao
 {
     public partial class CadastroUsuario : Form
     {
-        private ServicoUsuario _servico;
-        private Dominio.Usuario _usuario;
+        private readonly ServicoUsuario _servico;
+        private readonly Dominio.Usuario _usuario;
 
         public CadastroUsuario()
         {
             InitializeComponent();
             _servico = new ServicoUsuario();
+            _usuario = new Usuario();
         }
 
         private void CadastroUsuario_Load(object sender, EventArgs e)

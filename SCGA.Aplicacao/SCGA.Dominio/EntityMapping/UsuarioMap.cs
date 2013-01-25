@@ -35,7 +35,7 @@ namespace SCGA.Dominio.Mapping
             this.Property(t => t.Id).HasColumnName("IdUsuario");
             this.Property(t => t.Nome).HasColumnName("Nome");
             this.Property(t => t.Email).HasColumnName("Email");
-            this.Property(t => t.UserName).HasColumnName("UserName");
+            this.Property(t => t.UserName).HasColumnName("Username");
             this.Property(t => t.Senha).HasColumnName("Senha");
             this.Property(t => t.Codigo).HasColumnName("Codigo");
             this.Property(t => t.Sessao).HasColumnName("Sessao");

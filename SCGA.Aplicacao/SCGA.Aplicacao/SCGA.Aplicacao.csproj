@@ -65,8 +65,15 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,6 +106,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Configuracao.cs" />
     <Compile Include="Shared\Logger.cs" />
+    <Compile Include="Views\Base\CrudBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Base\CrudBase.Designer.cs">
+      <DependentUpon>CrudBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cadastros\FrmCadUsuarioPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cadastros\FrmCadUsuarioPerfil.Designer.cs">
+      <DependentUpon>FrmCadUsuarioPerfil.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +137,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Base\CrudBase.resx">
+      <DependentUpon>CrudBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cadastros\FrmCadUsuarioPerfil.resx">
+      <DependentUpon>FrmCadUsuarioPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,7 +154,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SCGA.Api\SCGA.Api.csproj">
@@ -156,6 +183,19 @@
   <ItemGroup>
     <None Include="Resources\Login.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2793_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7687_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2960_128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2742_32x32.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

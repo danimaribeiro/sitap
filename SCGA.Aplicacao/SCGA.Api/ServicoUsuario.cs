@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SCGA.Dominio.Common;
+using SCGA;
 
 namespace SCGA.Api
 {
     public class ServicoUsuario
     {
-        private Contexto.SCGAContext _contexto;
+        private readonly Contexto.SCGAContext _contexto;
 
         public ServicoUsuario()
         {
@@ -17,7 +17,7 @@ namespace SCGA.Api
 
         public Dominio.Usuario BuscarUsuario(string usuario, string senha)
         {
-            return _contexto.Usuarios.Where(x => x.UserName == usuario && x.Senha == senha).SingleOrDefault();
+            return _contexto.Usuarios.SingleOrDefault(x => x.UserName == usuario && x.Senha == senha);
         }
 
         public Dominio.Usuario Salvar(Dominio.Usuario usuario)
@@ -28,6 +28,7 @@ namespace SCGA.Api
                 usuario.DataCriacao = DateTime.Now;
                 usuario.UltimaAtualizacao = DateTime.Now;
                 usuario.Codigo = _contexto.Usuarios.Max(x => x.Codigo) + 1;
+
                 _contexto.Usuarios.Add(usuario);
             }
             else
@@ -40,11 +41,11 @@ namespace SCGA.Api
             return usuario;
         }
 
-        public ResultadoPaginado<List<Dominio.Usuario>> Listar(Filtro filtros)
+        public Dominio.Common.ResultadoPaginado<List<Dominio.Usuario>> Listar(Dominio.Common.Filtro filtros)
         {
             var consulta = _contexto.Usuarios.Skip(filtros.Pagina * filtros.QuantidadePagina).Take(filtros.QuantidadePagina);
             //TODO Achar uma maneira de passar a string de filtros diretamente para a consulta;
-            return new ResultadoPaginado<List<Dominio.Usuario>>(consulta.ToList(), consulta.Count(), filtros);            
+            return new Dominio.Common.ResultadoPaginado<List<Dominio.Usuario>>(consulta.ToList(), consulta.Count(), filtros);            
         }
 
         public List<Dominio.Menu> RetornarMenusPermitidos(Dominio.Usuario usuario)
