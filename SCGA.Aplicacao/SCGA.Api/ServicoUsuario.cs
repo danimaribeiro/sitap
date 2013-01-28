@@ -25,6 +25,7 @@ namespace SCGA.Api
             //TODO efetuar validação
             if (usuario.Id == 0)
             {
+                usuario.Sessao = Guid.NewGuid().ToString();
                 usuario.DataCriacao = DateTime.Now;
                 usuario.UltimaAtualizacao = DateTime.Now;
                 usuario.Codigo = _contexto.Usuarios.Max(x => x.Codigo) + 1;
@@ -40,9 +41,21 @@ namespace SCGA.Api
             return usuario;
         }
 
+        public void Excluir(Dominio.Usuario usuario)
+        {
+           var deletar =  _contexto.Usuarios.Find(usuario.Id);
+           if (deletar != null)
+           {
+               _contexto.Usuarios.Remove(deletar);
+               _contexto.SaveChanges();
+           }
+           else
+               throw new Exception("O registro não existe!");
+        }
+
         public ResultadoPaginado<List<Dominio.Usuario>> Listar(Filtro filtros)
         {
-            var consulta = _contexto.Usuarios.Skip(filtros.Pagina * filtros.QuantidadePagina).Take(filtros.QuantidadePagina);
+            var consulta = _contexto.Usuarios.OrderBy(x=>x.Nome).Take(filtros.QuantidadePagina).Skip((filtros.Pagina -1) * filtros.QuantidadePagina);
             //TODO Achar uma maneira de passar a string de filtros diretamente para a consulta;
             return new ResultadoPaginado<List<Dominio.Usuario>>(consulta.ToList(), consulta.Count(), filtros);            
         }
